@@ -1,11 +1,11 @@
 import './App.css';
-import Square from './res/Square';
+import { useState } from 'react';
+import RunesLvL from './res/runes';
 
 function App() {
   return (
     <div className="App">
-      <Square />
-      <Square />
+      <RunesLvL />
     </div>
   );
 }
