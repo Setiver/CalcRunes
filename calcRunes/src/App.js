@@ -1,5 +1,4 @@
 import './App.css';
-import { useState } from 'react';
 import RunesLvL from './res/runes';
 
 function App() {

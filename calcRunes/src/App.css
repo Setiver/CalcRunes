@@ -10,16 +10,22 @@
   display: block;
   margin-bottom: 3rem;
 }
+/* buttons */
+.buttons-styles {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
 
 .lvlBlock button {
   display: block;
   width: 25rem;
   text-align: center;
 }
-/* .lvlBlock {
-  display: flex;
-  flex-direction: column;
-} */
 
 .sizeBlock button {
   display: block;
