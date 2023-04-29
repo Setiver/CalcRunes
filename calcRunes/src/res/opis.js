@@ -25,17 +25,18 @@ export const sizeItem = [
 ];
 
 export const itemMaterial = [
-  'Banalne:        Patyk                               == 20G',
-  'Proste:         Skora                               == 50G',
-  'Znane:          Zelazo                              == 100G',
-  'Niezwykle:      Srebro                              == 1000G',
-  'Rzadkie:        Diament                             == 3.000G',
-  'Bardzo Rzadkie: Platyna                             == 7.000G',
-  'Legendarne:     Luski Smoka                         == 100.000G',
-  'Swiete:         Lzy Swietej Bestii                  == 300.000G',
-  'Boskie:         Krew Boga                           == 1.000.000',
-  'Demoniczne:     Krew Demona                         == 2.000.000',
+  'Banal: Stick ==> 20G',
+  'Simple: Leather ==> 50G',
+  'Known: Iron ==> 100G',
+  'Extraordinary: Silver ==> 1000G',
+  'Rare: Diamond ==> 3.000G',
+  'Very Rare: Platinum ==> 7.000G',
+  'Legendary: Dragon Scales ==> 100.000G',
+  'Holy: Tears of the Saint ==> 300.000G',
+  'Divine: Blood of God ==> 1,000,000',
+  'Demonic: Demon Blood ==> 2.000.000',
 ];
+
 export const moneyMaterial = [20, 50, 100, 1000, 3000, 7000, 100000, 300000, 1000000, 2000000];
 export const moneyLvl = [50, 200, 500, 2000, 10000, 50000, 250000, 1000000, 5000000, 25000000];
 export const moneySize = [50, 200, 1000, 3000, 7000, 15000, 35000, 70000, 100000, 200000];
