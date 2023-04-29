@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { lvl, sizeItem, itemMaterial, moneyLvl, moneyMaterial, moneySize } from './opis.js';
+
 const RunesLvL = () => {
   const [values, setValues] = useState([]);
 
@@ -8,7 +9,7 @@ const RunesLvL = () => {
     const { items, name, moneyArray, classes } = props;
     const [colors, setColors] = useState(Array(items.length).fill('black'));
 
-    const handleButtonClickColor = (event, index) => {
+    const handleColor = (event, index) => {
       event.preventDefault();
 
       const newColors = [...colors];
@@ -21,10 +22,9 @@ const RunesLvL = () => {
         className={`buttons-styles`}
         key={index}
         value={moneyArray[index]}
-        // onClick={handleButtonClick}
         onClick={event => {
+          handleColor(event, index);
           handleButtonClick(event);
-          handleButtonClickColor(event, index);
         }}
         style={{ backgroundColor: colors[index] }}>
         {obj}
