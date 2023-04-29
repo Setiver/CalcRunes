@@ -17,21 +17,25 @@ export const sizeItem = [
   '1m <1.5m ==> 1.000G',
   '1.5m < 2m ==> 3.000G',
   '2m < 3m ==> 7.000G',
-  '3m < 4m ==> 15.000G',
+  '4m < 6m ==> 15.000G',
+  '6m < 8m ==> 35.000G',
+  '8m < 12m ==> 70.000G',
+  '12m < 20m ==> 100.000G',
+  '20m < 20+ ==> 200.000G',
 ];
 
 export const itemMaterial = [
-  'Banalne:        Patyk, kamień                       == 20G',
-  'Proste:         Skóra, proste drewno                == 50G',
-  'Znane:          Żelazo, miedź                       == 100G',
-  'Niezwykłe:      Złoto, Srebro                       == 1000G',
-  'Rzadkie:        Diament, Skóra latającego Wieloryba == 3.000G',
-  'Bardzo Rzadkie: Platyna, Specyficzne Kryształy      == 7.000G',
-  'Legendarne:     Łuski Smoka, Ząb Lewiatana          == 100.000G',
-  'Święte:         Łzy Świętej Bestii, Pióra Feniksa   == 300.000G',
-  'Boskie:         Tkanina ze sukni Ateny, Krew Boga   == 1.000.000',
-  'Demoniczne:     Róg Szatana, Krew Demonów           == 2.000.000',
+  'Banalne:        Patyk                               == 20G',
+  'Proste:         Skora                               == 50G',
+  'Znane:          Zelazo                              == 100G',
+  'Niezwykle:      Srebro                              == 1000G',
+  'Rzadkie:        Diament                             == 3.000G',
+  'Bardzo Rzadkie: Platyna                             == 7.000G',
+  'Legendarne:     Luski Smoka                         == 100.000G',
+  'Swiete:         Lzy Swietej Bestii                  == 300.000G',
+  'Boskie:         Krew Boga                           == 1.000.000',
+  'Demoniczne:     Krew Demona                         == 2.000.000',
 ];
 export const moneyMaterial = [20, 50, 100, 1000, 3000, 7000, 100000, 300000, 1000000, 2000000];
 export const moneyLvl = [50, 200, 500, 2000, 10000, 50000, 250000, 1000000, 5000000, 25000000];
-export const moneySize = [50, 200, 1000, 3000, 7000, 15000];
+export const moneySize = [50, 200, 1000, 3000, 7000, 15000, 35000, 70000, 100000, 200000];
