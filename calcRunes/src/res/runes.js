@@ -1,34 +1,51 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import { lvl, sizeItem, itemMaterial, moneyLvl, moneyMaterial, moneySize } from './opis.js';
 
 const RunesLvL = () => {
+  // -------------------------------------------- //
+  const [mathRunes, setMathRunes] = useState(0);
   const [values, setValues] = useState([]);
 
+  // get the Value of button
+  const handleButtonClick = event => {
+    const value = parseInt(event.target.value);
+    setValues([...values, value]);
+  };
+
+  // change value of Cost to string and add dots
+  useEffect(() => {
+    const mathOfRunes = values.reduce((acc, cur) => acc + cur, 0);
+    const formattedNumber = mathOfRunes.toLocaleString('en-US', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+    setMathRunes(formattedNumber);
+  }, [values]);
+
+  // button reset
+  useEffect(() => {
+    function resetButton() {
+      setValues([0]);
+    }
+    const reset = document.querySelector('.button-reset');
+    reset.addEventListener('click', resetButton);
+  }, []);
+
+  // -------------------------------------------- //
   function Lista(props) {
     const { items, name, moneyArray, classes } = props;
-    const [colors, setColors] = useState(Array(items.length).fill('black'));
-
-    const handleColor = (event, index) => {
-      event.preventDefault();
-
-      const newColors = [...colors];
-      newColors[index] = newColors[index] === 'black' ? 'green' : 'black';
-      setColors(newColors);
-    };
 
     const itemsOptions = items.map((obj, index) => (
-      <button
-        className={`buttons-styles`}
-        key={index}
-        value={moneyArray[index]}
-        onClick={event => {
-          handleColor(event, index);
-          handleButtonClick(event);
-        }}
-        style={{ backgroundColor: colors[index] }}>
-        {obj}
-      </button>
+      <div key={index}>
+        <button
+          className={`buttons-styles`}
+          value={moneyArray[index]}
+          onClick={event => {
+            handleButtonClick(event);
+          }}>
+          {obj}
+        </button>
+      </div>
     ));
     return (
       <div className={classes} name={name}>
@@ -36,17 +53,6 @@ const RunesLvL = () => {
       </div>
     );
   }
-
-  const handleButtonClick = event => {
-    const value = parseInt(event.target.value);
-    if (values.length < 3) {
-      setValues([...values, value]);
-    } else {
-      setValues([...values.slice(1), value]);
-    }
-  };
-
-  const mathRunes = values.reduce((acc, cur) => acc + cur, 0);
 
   return (
     <div className="container ">
@@ -72,7 +78,10 @@ const RunesLvL = () => {
         </form>
       </div>
       {/* ------------------------------------------------------------------ */}
-      <p className="equation">Cost: {mathRunes}</p>
+      <div>
+        <p className={`equation`}>Cost: {mathRunes}</p>
+        <button className="button-reset buttons-styles">RESET</button>
+      </div>
     </div>
   );
 };

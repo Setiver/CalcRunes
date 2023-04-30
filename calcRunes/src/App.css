@@ -59,6 +59,11 @@ body {
   cursor: pointer;
 }
 
+.buttons-styles:active {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
 /* buttons position */
 .Block button {
   display: block;
@@ -80,7 +85,16 @@ body {
   max-width: 100%;
   flex-direction: row;
 }
+/* reset button position */
+.button-reset {
+  position: absolute;
+  font-size: 3rem;
+  bottom: 6%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+}
 
+/* cost  */
 .equation {
   position: absolute;
   left: 50%;
