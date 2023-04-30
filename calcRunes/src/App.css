@@ -19,7 +19,7 @@ body {
 .text-abowe-buttons {
   position: inherit;
   text-align: center;
-  font-size: 40px;
+  font-size: 3rem;
   font-family: inherit;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
@@ -27,22 +27,22 @@ body {
 
 .runes-lvl-position {
   position: absolute;
-  top: 5%;
+  top: 4.5%;
   left: 20%;
   transform: translate(-50%, -50%);
 }
 
 .item-size-position {
   position: absolute;
-  top: 5%;
+  top: 4.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .item-material-position {
   position: absolute;
-  top: 5%;
-  right: 5.5%;
+  top: 4.5%;
+  right: 2.5%;
   transform: translate(-50%, -50%);
 }
 
@@ -89,7 +89,7 @@ body {
 .button-reset {
   position: absolute;
   font-size: 3rem;
-  bottom: 6%;
+  bottom: 5%;
   right: 2%;
   transform: translate(-50%, -50%);
 }
@@ -98,7 +98,7 @@ body {
 .equation {
   position: absolute;
   left: 50%;
-  bottom: -10%;
+  bottom: -11%;
   background: none;
   border: 4px solid #eee;
   font-family: inherit;
