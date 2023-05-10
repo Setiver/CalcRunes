@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { lvl, sizeItem, itemMaterial, moneyLvl, moneyMaterial, moneySize } from './opis.js';
 
 const RunesLvL = () => {
   // -------------------------------------------- //
   const [mathRunes, setMathRunes] = useState(0);
   const [values, setValues] = useState([]);
+  const buttonRef = useRef([]);
 
   // get the Value of button
   const handleButtonClick = event => {
@@ -23,13 +24,9 @@ const RunesLvL = () => {
   }, [values]);
 
   // button reset
-  useEffect(() => {
-    function resetButton() {
-      setValues([0]);
-    }
-    const reset = document.querySelector('.button-reset');
-    reset.addEventListener('click', resetButton);
-  }, []);
+  function resetButton() {
+    setValues([0]);
+  }
 
   // -------------------------------------------- //
   function Lista(props) {
@@ -39,6 +36,7 @@ const RunesLvL = () => {
       <div key={index}>
         <button
           className={`buttons-styles`}
+          key={index}
           value={moneyArray[index]}
           onClick={event => {
             handleButtonClick(event);
@@ -67,20 +65,32 @@ const RunesLvL = () => {
       <div className="text-abowe-buttons item-size-position">Item Size</div>
       <div className="row">
         <form>
-          <Lista items={sizeItem} name="item-size" moneyArray={moneySize} classes={'Block block-size'} />
+          <Lista
+            items={sizeItem}
+            name="item-size"
+            moneyArray={moneySize}
+            classes={'Block block-size'}
+          />
         </form>
       </div>
       {/* ------------------------------------------------------------------ */}
       <div className="text-abowe-buttons item-material-position">Item Material</div>
       <div className="row">
         <form>
-          <Lista items={itemMaterial} name="item-material" moneyArray={moneyMaterial} classes={'Block block-money'} />
+          <Lista
+            items={itemMaterial}
+            name="item-material"
+            moneyArray={moneyMaterial}
+            classes={'Block block-money'}
+          />
         </form>
       </div>
       {/* ------------------------------------------------------------------ */}
       <div>
         <p className={`equation`}>Cost: {mathRunes}</p>
-        <button className="button-reset buttons-styles">RESET</button>
+        <button className="button-reset buttons-styles" onClick={resetButton}>
+          RESET
+        </button>
       </div>
     </div>
   );
